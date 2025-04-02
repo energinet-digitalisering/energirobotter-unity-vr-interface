@@ -1,0 +1,10 @@
+# ninja log v5
+41	2470	7628852419739464	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	55ab0f6b077e0aa5
+83	2584	7628852421109234	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c56725f16fa97520
+28	2587	7628852420383326	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	99fe8b7a895bfff8
+19	2591	7628852420793071	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c7aa6d702e15b214
+62	2635	7628852421711527	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	8bcf49c8a35d6ea8
+10	2649	7628852421828064	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	3382aed467b740b8
+51	2854	7628852423711757	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	34cf8607482095d4
+1	2951	7628852424929251	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	1bc78e82eac79c5b
+2952	3124	7628852426676061	C:/Users/nicol/Documents/Energirobotter/Humanoid Research Prototype/Drone Consulting/Teleoperation/VR Interface/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1g362619/obj/arm64-v8a/libgame.so	97b20ef81a2d2a9a
