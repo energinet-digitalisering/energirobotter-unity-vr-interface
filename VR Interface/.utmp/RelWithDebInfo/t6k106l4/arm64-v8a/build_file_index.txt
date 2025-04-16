@@ -1,0 +1,2 @@
+C:\Users\nicol\Documents\GitHub Repos\energirobotter-unity-vr-interface\VR Interface\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\nicol\Documents\GitHub Repos\energirobotter-unity-vr-interface\VR Interface\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

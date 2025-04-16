@@ -45,30 +45,54 @@ public class ZeroMQTrackingPublisher : MonoBehaviour
 
         AsyncIO.ForceDotNet.Force();
         pubSocket = new PublisherSocket();
-        pubSocket.Bind($"tcp://{ipAddress}:{port}");
 
+        try
+        {
+            pubSocket.Bind($"tcp://{ipAddress}:{port}");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"Failed to bind socket: {e}");
+            return;
+        }
+
+        var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+        long nextSendTime = stopwatch.ElapsedMilliseconds;
+
+        // Loop
         while (running)
         {
-            TrackingData data;
-            lock (dataLock)  // Copy thread-safe data
+            long now = stopwatch.ElapsedMilliseconds;
+
+            if (now >= nextSendTime)
             {
-                data = new TrackingData
+                TrackingData data;
+                lock (dataLock)  // Copy thread-safe data
                 {
-                    headPos = Left2RightPos(headPos),
-                    headRot = Left2RightRotation(headRot),
-                    leftHandPos = Left2RightPos(leftHandPos),
-                    leftHandRot = Left2RightRotation(leftHandRot),
-                    rightHandPos = Left2RightPos(rightHandPos),
-                    rightHandRot = Left2RightRotation(rightHandRot)
-                };
+                    data = new TrackingData
+                    {
+                        headPos = Left2RightPos(headPos),
+                        headRot = Left2RightRotation(headRot),
+                        leftHandPos = Left2RightPos(leftHandPos),
+                        leftHandRot = Left2RightRotation(leftHandRot),
+                        rightHandPos = Left2RightPos(rightHandPos),
+                        rightHandRot = Left2RightRotation(rightHandRot)
+                    };
+                }
+
+                string jsonData = JsonUtility.ToJson(data);
+                pubSocket.SendFrame(jsonData);
+
+                Debug.Log($"data: {jsonData}");
+
+                nextSendTime += 20;  // Schedule next send ~20ms later (50 Hz)
+            }
+            else
+            {
+                Thread.Sleep(1);  // Yield CPU briefly
             }
 
-            string jsonData = JsonUtility.ToJson(data);
-            pubSocket.SendFrame(jsonData);
-
-            Thread.Sleep(20);  // Control send rate (~50Hz)
-
-            Debug.Log($"data: {jsonData}");
+            pubSocket.Close();
         }
     }
 
@@ -90,11 +114,9 @@ public class ZeroMQTrackingPublisher : MonoBehaviour
 
     void OnDestroy()
     {
-        Debug.Log("HERE: OnDestroy");
-
         running = false;
-        sendThread.Abort();
-        pubSocket.Close();
+        sendThread.Join();
+        pubSocket?.Close();
         NetMQConfig.Cleanup(false);
     }
 
