@@ -8,6 +8,9 @@
 [Tt]emp/
 [Uu]nityGenerated/
 
+# Android VR build
+*.apk
+
 # file on crash reports
 sysinfo.txt
 

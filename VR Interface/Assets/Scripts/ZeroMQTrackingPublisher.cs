@@ -56,10 +56,11 @@ public class ZeroMQTrackingPublisher : MonoBehaviour
             return;
         }
 
+        Thread.Sleep(1000);
+
         var stopwatch = System.Diagnostics.Stopwatch.StartNew();
         long nextSendTime = stopwatch.ElapsedMilliseconds;
 
-        // Loop
         while (running)
         {
             long now = stopwatch.ElapsedMilliseconds;
@@ -83,17 +84,18 @@ public class ZeroMQTrackingPublisher : MonoBehaviour
                 string jsonData = JsonUtility.ToJson(data);
                 pubSocket.SendFrame(jsonData);
 
-                Debug.Log($"data: {jsonData}");
-
                 nextSendTime += 20;  // Schedule next send ~20ms later (50 Hz)
+
+                // Debug.Log($"data: {jsonData}");
+                Debug.Log($"now: {now}");
             }
             else
             {
                 Thread.Sleep(1);  // Yield CPU briefly
             }
-
-            pubSocket.Close();
         }
+
+        pubSocket.Close();
     }
 
     void Update()
@@ -116,7 +118,6 @@ public class ZeroMQTrackingPublisher : MonoBehaviour
     {
         running = false;
         sendThread.Join();
-        pubSocket?.Close();
         NetMQConfig.Cleanup(false);
     }
 

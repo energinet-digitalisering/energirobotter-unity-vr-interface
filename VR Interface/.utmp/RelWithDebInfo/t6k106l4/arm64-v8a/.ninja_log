@@ -1,10 +1,10 @@
 # ninja log v5
-43	3398	7664998161197485	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	a9e34babc9cc0e51
-53	3691	7664998163394731	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	d3252f0e2cfb76fe
-20	3822	7664998163927587	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	f9260bbc19b182fa
-63	3976	7664998166080919	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	326da625eba331c4
-77	3979	7664998164050745	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	bbde616fa75bb6d2
-1	4090	7664998167383203	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	c93f5d3155a66df8
-33	4482	7664998172674487	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	b5a5dca3eac2d23c
-12	4910	7664998176576147	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	e8d51d13421b23c8
-4911	5479	7664998182931711	C:/Users/nicol/Documents/GitHub Repos/energirobotter-unity-vr-interface/VR Interface/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/t6k106l4/obj/arm64-v8a/libgame.so	5189e68f48df9340
+37	2936	7665108860580486	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	a9e34babc9cc0e51
+26	2951	7665108860549972	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	d3252f0e2cfb76fe
+17	3027	7665108861274481	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	f9260bbc19b182fa
+83	3030	7665108861126385	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	bbde616fa75bb6d2
+1	3082	7665108862235629	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	c93f5d3155a66df8
+62	3084	7665108862174941	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	326da625eba331c4
+47	3266	7665108864058614	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	b5a5dca3eac2d23c
+10	3367	7665108865134322	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	e8d51d13421b23c8
+3367	3528	7665108866841974	C:/Users/nicol/Documents/GitHub Repos/energirobotter-unity-vr-interface/VR Interface/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/t6k106l4/obj/arm64-v8a/libgame.so	5189e68f48df9340
